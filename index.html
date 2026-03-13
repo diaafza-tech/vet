@@ -129,6 +129,27 @@ function addAllDrugs(){
 
   showDrugs();
   calculateDrugs();
+  clearDrugFields();
+  // تصفير الخانات بعد الإضافة
+document.getElementById("drug1").selectedIndex = 0;
+document.getElementById("drugQty1").value = "";
+document.getElementById("drugAnimalType1").selectedIndex = 0;
+document.getElementById("animalQty1").value = "";
+
+document.getElementById("drug2").selectedIndex = 0;
+document.getElementById("drugQty2").value = "";
+document.getElementById("drugAnimalType2").selectedIndex = 0;
+document.getElementById("animalQty2").value = "";
+
+document.getElementById("drug3").selectedIndex = 0;
+document.getElementById("drugQty3").value = "";
+document.getElementById("drugAnimalType3").selectedIndex = 0;
+document.getElementById("animalQty3").value = "";
+
+document.getElementById("supply").selectedIndex = 0;
+document.getElementById("supplyQty").value = "";
+
+document.getElementById("drug1").focus();
 }
 
 function showDrugs(){
