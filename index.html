@@ -94,7 +94,7 @@ function addAllDrugs(){
     const qty=parseInt(qtyEl.value)||0;
     const animalType=animalTypeEl.value;
     const animalQty=parseInt(animalQtyEl.value)||0;
-    if(val && qty>0 && animalType && animalQty>0){
+   if(val){
       const [price, service]=val.split("|").map(Number);
       let drugService=0;
       if(["جنتامايسين","تايلوسين","انروفلوكساسين","أوكسي تتراسيكلين","خافض","بلوك أملاح","كالسيوم"].includes(name)) drugService=50*animalQty;
