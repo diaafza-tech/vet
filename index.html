@@ -97,14 +97,14 @@ function addAllDrugs(){
    if(val){
       const [price, service]=val.split("|").map(Number);
       let drugService=0;
-      if(["جنتامايسين","تايلوسين","انروفلوكساسين","أوكسي تتراسيكلين","خافض","بلوك أملاح","كالسيوم"].includes(name)) drugService=50*animalQty;
-      else if(name==="تيوب ضرع") drugService=250*animalQty;
-      else if(["مضاد تخمه","مضاد نفاخ"].includes(name)) drugService=150*animalQty;
-      else if(name==="سبري جروح") drugService=500*animalQty;
-      else if(name==="مرهم كبريت") drugService=150*animalQty;
-      else if(name==="ايفرمكتين") drugService=(["أبقار","جاموس"].includes(animalType)?100:25)*animalQty;
-      else if(["باور اون","تجريع","باور اون 250 مل"].includes(name)) drugService=(["أبقار","جاموس"].includes(animalType)?10:5)*animalQty;
-      else if(name==="بارفكوين") drugService=25*animalQty;
+      if(["جنتامايسين","تايلوسين","انروفلوكساسين","أوكسي تتراسيكلين","خافض","بلوك أملاح","كالسيوم"].includes(name)) drugService=50*(animalQty || 0);
+      else if(name==="تيوب ضرع") drugService=250*(animalQty || 0);
+      else if(["مضاد تخمه","مضاد نفاخ"].includes(name)) drugService=150*(animalQty || 0);
+      else if(name==="سبري جروح") drugService=500*(animalQty || 0);
+      else if(name==="مرهم كبريت") drugService=150*(animalQty || 0);
+      else if(name==="ايفرمكتين") drugService=(["أبقار","جاموس"].includes(animalType)?100:25)*(animalQty || 0);
+      else if(["باور اون","تجريع","باور اون 250 مل"].includes(name)) drugService=(["أبقار","جاموس"].includes(animalType)?10:5)*(animalQty || 0);
+      else if(name==="بارفكوين") drugService=25*(animalQty || 0);
 
       drugs.push({name,price,qty,animalType,animalQty,location,drugService});
       drugServiceTotal+=drugService;
